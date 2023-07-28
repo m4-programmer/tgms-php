@@ -40,40 +40,44 @@
                         </p>
                       </a>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a href="<?php echo base_url ?>admin/?page=passes" class="nav-link nav-passes">
-                        <i class="nav-icon fas fa-credit-card"></i>
-                        <p>
-                          Passes
-                        </p>
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a href="<?php echo base_url ?>admin/?page=pass_history" class="nav-link nav-pass_history">
-                        <i class="nav-icon fas fa-stream"></i>
-                        <p>
-                          Passes History
-                        </p>
-                      </a>
-                    </li>
+                       <!--To delete section-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                      <a href="--><?php //echo base_url ?><!--admin/?page=passes" class="nav-link nav-passes">-->
+<!--                        <i class="nav-icon fas fa-credit-card"></i>-->
+<!--                        <p>-->
+<!--                          Passes-->
+<!--                        </p>-->
+<!--                      </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                      <a href="--><?php //echo base_url ?><!--admin/?page=pass_history" class="nav-link nav-pass_history">-->
+<!--                        <i class="nav-icon fas fa-stream"></i>-->
+<!--                        <p>-->
+<!--                          Passes History-->
+<!--                        </p>-->
+<!--                      </a>-->
+<!--                    </li>-->
+                       <!--End of delete section-->
                     <?php if($_settings->userdata('type') == 1): ?>
                     <li class="nav-header">Reports</li>
-                    <li class="nav-item dropdown">
-                      <a href="<?php echo base_url ?>admin/?page=reports/passes" class="nav-link nav-reports_passes">
-                        <i class="nav-icon fas fa-circle"></i>
-                        <p>
-                          Daily Passes Report
-                        </p>
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a href="<?php echo base_url ?>admin/?page=reports/pass_history" class="nav-link nav-reports_pass_history">
-                        <i class="nav-icon fas fa-circle"></i>
-                        <p>
-                          Daily Passes History Report
-                        </p>
-                      </a>
-                    </li>
+                    <!--To delete Section-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                      <a href="--><?php //echo base_url ?><!--admin/?page=reports/passes" class="nav-link nav-reports_passes">-->
+<!--                        <i class="nav-icon fas fa-circle"></i>-->
+<!--                        <p>-->
+<!--                          Daily Passes Report-->
+<!--                        </p>-->
+<!--                      </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                      <a href="--><?php //echo base_url ?><!--admin/?page=reports/pass_history" class="nav-link nav-reports_pass_history">-->
+<!--                        <i class="nav-icon fas fa-circle"></i>-->
+<!--                        <p>-->
+<!--                          Daily Passes History Report-->
+<!--                        </p>-->
+<!--                      </a>-->
+<!--                    </li>-->
+                    <!--End of Delete Section-->
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=reports/recipient" class="nav-link nav-reports_recipient">
                         <i class="nav-icon fas fa-circle"></i>

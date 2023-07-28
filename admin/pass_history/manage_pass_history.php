@@ -203,3 +203,32 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 
 	})
 </script>
+
+
+<!--// code to update price-->
+<script>
+    $(document).ready(function() {
+        // Attach a click event listener to the category select element
+        $('#category_id').on('change', function() {
+            var selectedCategoryId = $(this).val(); // Get the selected category ID
+            if (selectedCategoryId) {
+
+                // Send an AJAX request to fetch the price for the selected category
+                $.ajax({
+                    url: 'http://localhost/ttms/admin/returnPrice.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { category_id: selectedCategoryId },
+                    success: function(data) {
+                        // Update the "Cost" input field with the fetched price
+                        $('#cost').val(data.price); // Assuming the price is returned as 'price' in the JSON response
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error if necessary
+                        console.log(error);
+                    }
+                });
+            }
+        });
+    });
+</script>

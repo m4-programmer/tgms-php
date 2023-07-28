@@ -253,6 +253,15 @@ class SystemSettings extends DBConnection{
 		$decryption = openssl_decrypt($encryption, "AES-128-ECB", '5da283a2d990e8d8512cf967df5bc0d0');
 		return $decryption;
 	}
+    public function getTollGateName($id){
+        $sql = "SELECT name FROM toll_list where id = $id";
+        $qry = $this->conn->query($sql);
+        $result = $qry->fetch_assoc();
+        if ($result) {
+            return $result['name'];
+        }
+    }
+
 }
 $_settings = new SystemSettings();
 $_settings->load_system_info();

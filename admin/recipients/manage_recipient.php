@@ -55,6 +55,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 								</select>
 							</div>
 							<?php else: ?>
+                            <div class="form-group mb-3">
+                                <label for="vehicle_name" class="control-label">Toll Gate</label>
+                                <input type="text" class="form-control form-control-sm rounded-0" id="gate" name="gate" value="<?=( $_settings->getTollGateName($_settings->userdata('toll_id')))?>" disabled>
+                            </div>
 							<input type="hidden" name ="toll_id" value="<?php echo $_settings->userdata('toll_id') ?>">
 							<?php endif ?>
 							<div class="form-group mb-3">
@@ -159,7 +163,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 
                 // Send an AJAX request to fetch the price for the selected category
                 $.ajax({
-                    url: 'http://localhost/ttms/admin/returnPrice.php',
+                    url: 'http://localhost/tgms/admin/returnPrice.php',
                     type: 'POST',
                     dataType: 'json',
                     data: { category_id: selectedCategoryId },

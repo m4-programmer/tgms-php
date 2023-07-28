@@ -23,9 +23,9 @@
           <?php ?>
         </span>
       </div>
-      <!-- /.info-box-content -->
+
     </div>
-    <!-- /.info-box -->
+
   </div>
   <!-- /.col -->
   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -41,47 +41,11 @@
           <?php ?>
         </span>
       </div>
-      <!-- /.info-box-content -->
+
     </div>
-    <!-- /.info-box -->
+
   </div>
-  <!-- /.col -->
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-    <div class="info-box">
-      <span class="info-box-icon bg-gradient-navy elevation-1"><i class="fas fa-credit-card"></i></span>
-      <div class="info-box-content">
-        <span class="info-box-text">Passes</span>
-        <span class="info-box-number">
-          <?php 
-            $passes = $conn->query("SELECT * FROM `pass_list`")->num_rows;
-            echo format_num($passes);
-          ?>
-          <?php ?>
-        </span>
-      </div>
-      <!-- /.info-box-content -->
-    </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-    <div class="info-box">
-      <span class="info-box-icon bg-gradient-secondary elevation-1"><i class="fas fa-stream"></i></span>
-      <div class="info-box-content">
-        <span class="info-box-text">Passes History Today</span>
-        <span class="info-box-number">
-          <?php 
-            $history = $conn->query("SELECT * FROM pass_history where date(date_created) = '".date('Y-m-d')."'")->num_rows;
-            echo format_num($history);
-          ?>
-          <?php ?>
-        </span>
-      </div>
-      <!-- /.info-box-content -->
-    </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
+
   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
     <div class="info-box">
       <span class="info-box-icon bg-gradient-warning elevation-1"><i class="fas fa-ticket-alt"></i></span>
@@ -95,9 +59,9 @@
           <?php ?>
         </span>
       </div>
-      <!-- /.info-box-content -->
+
     </div>
-    <!-- /.info-box -->
+
   </div>
   <!-- /.col -->
   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -113,50 +77,64 @@
           <?php ?>
         </span>
       </div>
-      <!-- /.info-box-content -->
+
     </div>
-    <!-- /.info-box -->
+
   </div>
   <!-- /.col -->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-warning elevation-1"><i class="fas fa-credit-card"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">All Recipient</span>
+                <span class="info-box-number">
+          <?php
+          $recipient = $conn->query("SELECT * FROM recipient_list where  user_id = '{$_settings->userdata('id')}' ")->num_rows;
+          echo format_num($recipient);
+          ?>
+          <?php ?>
+        </span>
+            </div>
+
+        </div>
+
+    </div>
 </div>
 <?php else: ?>
 <div class="row">
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<!--<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
     <div class="info-box">
       <span class="info-box-icon bg-gradient-navy elevation-1"><i class="fas fa-credit-card"></i></span>
       <div class="info-box-content">
         <span class="info-box-text">Passes</span>
         <span class="info-box-number">
-          <?php 
+          <?php /*
             $passes = $conn->query("SELECT * FROM `pass_list`")->num_rows;
             echo format_num($passes);
-          ?>
-          <?php ?>
+          */?>
+          <?php /**/?>
         </span>
       </div>
-      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
+  </div>-->
+
   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-    <div class="info-box">
-      <span class="info-box-icon bg-gradient-secondary elevation-1"><i class="fas fa-stream"></i></span>
-      <div class="info-box-content">
-        <span class="info-box-text">Passes History Today</span>
-        <span class="info-box-number">
-          <?php 
-            $history = $conn->query("SELECT * FROM pass_history where date(date_created) = '".date('Y-m-d')."' and user_id = '{$_settings->userdata('id')}' ")->num_rows;
-            echo format_num($history);
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-warning elevation-1"><i class="fas fa-credit-card"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">All Recipient</span>
+                <span class="info-box-number">
+          <?php
+          $recipient = $conn->query("SELECT * FROM recipient_list where  user_id = '{$_settings->userdata('id')}' ")->num_rows;
+          echo format_num($recipient);
           ?>
           <?php ?>
         </span>
-      </div>
-      <!-- /.info-box-content -->
+            </div>
+
+        </div>
+
     </div>
-    <!-- /.info-box -->
-  </div>
-  <!-- /.col -->
   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
     <div class="info-box">
       <span class="info-box-icon bg-gradient-warning elevation-1"><i class="fas fa-ticket-alt"></i></span>
@@ -170,10 +148,11 @@
           <?php ?>
         </span>
       </div>
-      <!-- /.info-box-content -->
+
     </div>
-    <!-- /.info-box -->
+
   </div>
+
   <!-- /.col -->
 </div>
 <?php endif; ?> 
